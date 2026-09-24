@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Cyber Defense Command Center
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                ◈
+            </div>
+
+            <div>
+
+                <h2>
+                    CYBERDEFENSE
+                </h2>
+
+                <span>
+                    THREAT HUNTING PLATFORM
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+
+            <a href="#dashboard"
+               class="active">
+
+                <span>▣</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="#security-alerts">
+
+                <span>⚠</span>
+
+                Security Alerts
+
+            </a>
+
+
+            <a href="#threat-hunting">
+
+                <span>⌁</span>
+
+                Threat Hunting
+
+            </a>
+
+
+            <a href="#ioc-intelligence">
+
+                <span>◉</span>
+
+                IOC Intelligence
+
+            </a>
+
+
+            <a href="#incident-reports">
+
+                <span>▤</span>
+
+                Incident Reports
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="system-status">
+
+            <div class="status-dot"></div>
+
+            <div>
+
+                <strong>
+                    SYSTEM ONLINE
+                </strong>
+
+                <small>
+                    Monitoring Active
+                </small>
+
+            </div>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="header"
+                id="dashboard">
+
+
+            <div>
+
+                <p class="eyebrow">
+                    SECURITY OPERATIONS CENTER
+                </p>
+
+
+                <h1>
+                    Cyber Defense Command Center
+                </h1>
+
+
+                <p class="subtitle">
+                    AI-powered deception & threat hunting
+                </p>
+
+            </div>
+
+
+            <div class="live-indicator">
+
+                <span class="pulse"></span>
+
+                LIVE MONITORING
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ================= STATISTICS ================= -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <span class="stat-label">
+                    SECURITY EVENTS
+                </span>
+
+
+                <strong id="total-events">
+                    0
+                </strong>
+
+
+                <small>
+                    Live database events
+                </small>
+
+            </div>
+
+
+
+            <div class="stat-card danger">
+
+                <span class="stat-label">
+                    ACTIVE INCIDENTS
+                </span>
+
+
+                <strong id="active-incidents">
+                    0
+                </strong>
+
+
+                <small>
+                    High / Critical risk
+                </small>
+
+            </div>
+
+
+
+            <div class="stat-card warning">
+
+                <span class="stat-label">
+                    IOCs IDENTIFIED
+                </span>
+
+
+                <strong id="ioc-count">
+                    0
+                </strong>
+
+
+                <small>
+                    IPs & domains
+                </small>
+
+            </div>
+
+
+
+            <div class="stat-card success">
+
+                <span class="stat-label">
+                    SYSTEM STATUS
+                </span>
+
+
+                <strong>
+                    ONLINE
+                </strong>
+
+
+                <small>
+                    All services operational
+                </small>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= SECURITY + THREAT HUNTING ================= -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- SECURITY ALERTS -->
+
+            <div class="panel alerts-panel"
+                 id="security-alerts">
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            REAL-TIME FEED
+                        </span>
+
+
+                        <h2>
+                            Security Alerts
+                        </h2>
+
+                    </div>
+
+
+                    <span class="live-badge">
+                        LIVE
+                    </span>
+
+
+                </div>
+
+
+
+                <div id="alerts-container"
+                     class="alerts-container">
+
+
+                    <div class="loading">
+
+                        Loading security events...
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- THREAT HUNTING -->
+
+            <div class="panel"
+                 id="threat-hunting">
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+                        <span class="panel-kicker">
+                            BEHAVIOR ANALYSIS
+                        </span>
+
+
+                        <h2>
+                            Threat Hunting
+                        </h2>
+
+                    </div>
+
+
+                    <span class="live-badge">
+                        AI
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="hunting-content">
+
+
+                    <div class="hunt-summary">
+
+
+                        <div class="hunt-icon">
+                            ⌁
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Automated Threat Hunting
+                            </strong>
+
+
+                            <p>
+                                Correlating security events
+                                and identifying suspicious
+                                patterns.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="hunt-row">
+
+                        <span>
+                            Events Analyzed
+                        </span>
+
+
+                        <strong id="hunt-events">
+                            0
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="hunt-row">
+
+                        <span>
+                            High-Risk Events
+                        </span>
+
+
+                        <strong id="hunt-high">
+                            0
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="hunt-row">
+
+                        <span>
+                            Correlated Findings
+                        </span>
+
+
+                        <strong id="hunt-findings">
+                            0
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="hunt-status">
+
+                        <span class="status-dot"></span>
+
+                        <span>
+                            Threat hunting engine active
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= DEFENSE STATUS ================= -->
+
+        <section class="panel defense-panel">
+
+
+            <div class="panel-header">
+
+
+                <div>
+
+                    <span class="panel-kicker">
+                        PLATFORM STATUS
+                    </span>
+
+
+                    <h2>
+                        Defense Status
+                    </h2>
+
+                </div>
+
+
+                <span class="live-badge">
+                    ONLINE
+                </span>
+
+
+            </div>
+
+
+
+            <div class="status-list">
+
+
+                <div class="status-row">
+
+                    <span>
+                        Deception Layer
+                    </span>
+
+                    <strong class="online">
+                        ONLINE
+                    </strong>
+
+                </div>
+
+
+
+                <div class="status-row">
+
+                    <span>
+                        AI Analyzer
+                    </span>
+
+                    <strong class="online">
+                        ONLINE
+                    </strong>
+
+                </div>
+
+
+
+                <div class="status-row">
+
+                    <span>
+                        IOC Engine
+                    </span>
+
+                    <strong class="online">
+                        ONLINE
+                    </strong>
+
+                </div>
+
+
+
+                <div class="status-row">
+
+                    <span>
+                        Threat Hunter
+                    </span>
+
+                    <strong class="online">
+                        ONLINE
+                    </strong>
+
+                </div>
+
+
+
+                <div class="status-row">
+
+                    <span>
+                        SQLite Database
+                    </span>
+
+                    <strong class="online">
+                        CONNECTED
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="uptime">
+
+                <span>
+                    MONITORING UPTIME
+                </span>
+
+
+                <strong id="uptime">
+                    00:00:00
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= IOC INTELLIGENCE ================= -->
+
+        <section class="panel ioc-panel"
+                 id="ioc-intelligence">
+
+
+            <div class="panel-header">
+
+
+                <div>
+
+                    <span class="panel-kicker">
+                        THREAT INTELLIGENCE
+                    </span>
+
+
+                    <h2>
+                        IOC Intelligence
+                    </h2>
+
+                </div>
+
+
+                <span class="live-badge">
+                    AUTO
+                </span>
+
+
+            </div>
+
+
+
+            <div class="ioc-content">
+
+
+                <div class="ioc-box">
+
+
+                    <span class="ioc-label">
+                        IP ADDRESSES
+                    </span>
+
+
+                    <div id="ip-list">
+
+                        No IP indicators detected
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="ioc-box">
+
+
+                    <span class="ioc-label">
+                        DOMAINS
+                    </span>
+
+
+                    <div id="domain-list">
+
+                        No domain indicators detected
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= INCIDENT REPORTS ================= -->
+
+        <section class="panel incident-panel"
+                 id="incident-reports">
+
+
+            <div class="panel-header">
+
+
+                <div>
+
+                    <span class="panel-kicker">
+                        INCIDENT MANAGEMENT
+                    </span>
+
+
+                    <h2>
+                        Incident Reports
+                    </h2>
+
+                </div>
+
+
+                <span class="live-badge">
+                    LIVE
+                </span>
+
+
+            </div>
+
+
+
+            <div id="incidents-container">
+
+
+                <div class="loading">
+
+                    Loading incident reports...
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+
+            <span>
+                AI-Based Cyber Deception & Threat Hunting Platform
+            </span>
+
+
+            <span>
+                Local Controlled Security Environment
+            </span>
+
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+
+</body>
+
+</html>
